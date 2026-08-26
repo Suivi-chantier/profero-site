@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+# Ressources nécessaires au rendu (ne pas bloquer)
+Allow: /assets/
+
 Sitemap: https://www.groupe-profero.com/sitemap.xml
