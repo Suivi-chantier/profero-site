@@ -3554,6 +3554,29 @@
       line-height: 1.75;
       font-size: .96rem;
     }
+
+    /* MENTION DE PRUDENCE — RENDEMENTS AFFICHÉS */
+    .faq-caution {
+      margin: 0 18px 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: rgba(184,135,44,.08);
+      border: 1px solid rgba(184,135,44,.22);
+      display: grid;
+      gap: 6px;
+    }
+    .faq-caution strong {
+      color: var(--navy-950);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .faq-caution span {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
     .faq-outro {
       border-radius: 26px;
       padding: 26px 30px;
@@ -3585,6 +3608,10 @@
       }
       .faq-answer {
         padding: 0 16px 16px;
+      }
+      .faq-caution {
+        margin: 0 16px 14px;
+        padding: 14px 16px;
       }
       /* Même cause que les CTA des offres : .btn est en white-space:nowrap, donc le
          libellé du bouton imposait à .faq-outro un min-content de 325 px. Comme
@@ -5837,6 +5864,10 @@
 <span class="faq-category-desc">Rendements, projets réalisés et engagements</span>
 </summary>
 <div class="faq-category-body">
+<div class="faq-caution">
+<strong>Mention de prudence</strong>
+<span>Les performances présentées sont indicatives et dépendent du prix d’achat, du financement, des loyers, des charges, des travaux, de la fiscalité et du marché local. Elles ne constituent pas une garantie de rendement.</span>
+</div>
 <details>
 <summary>Quels rendements puis-je espérer ?</summary>
 <div class="faq-answer">
