@@ -1,0 +1,262 @@
+/* ==========================================================
+   PROFERO — MOTION DESIGN (feuille partagée)
+   Chargée par index.html et les 7 pages satellites SEO,
+   APRÈS le <style> principal de chaque page : les règles
+   ci-dessous doivent pouvoir compléter les styles de base.
+
+   Principes : transform / opacity uniquement, aucune
+   librairie, aucune animation de propriété qui déclenche
+   un reflow, aucun effet au tap sur mobile.
+
+   Les sélecteurs de cartes et de grilles diffèrent entre la
+   home et les satellites ; ils sont réunis ici sans conflit
+   (aucune page ne possède les classes de l'autre, hormis
+   .faq-category et .faq-answer, traitées de façon identique).
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. Révélation au scroll — courbe plus courte, plus tenue
+   L'état de base (.reveal / .reveal.visible) reste défini
+   dans chaque page ; on n'ajuste ici que le timing.
+   ---------------------------------------------------------- */
+.reveal {
+  transition: opacity .6s cubic-bezier(.22,.61,.36,1),
+              transform .6s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* ----------------------------------------------------------
+   2. Stagger léger — 80 ms entre cartes d'un même groupe,
+   plafonné à 320 ms pour ne jamais retarder la lecture.
+   ---------------------------------------------------------- */
+
+/* Home */
+.offers-grid > .reveal:nth-child(2),
+.offers-grid-three > .reveal:nth-child(2),
+.audience-grid > .reveal:nth-child(2),
+.resources > .reveal:nth-child(2),
+.entity-grid > .reveal:nth-child(2),
+.sci-cards > .reveal:nth-child(2),
+.expat-grid > .reveal:nth-child(2),
+.reno-advantage-grid > .reveal:nth-child(2),
+.faq-categories > .reveal:nth-child(2),
+/* Satellites */
+.grid-2 > .reveal:nth-child(2),
+.grid-3 > .reveal:nth-child(2),
+.qlist > .reveal:nth-child(2),
+.steps > .reveal:nth-child(2),
+.mistakes > .reveal:nth-child(2) { transition-delay: 80ms; }
+
+.offers-grid > .reveal:nth-child(3),
+.offers-grid-three > .reveal:nth-child(3),
+.audience-grid > .reveal:nth-child(3),
+.resources > .reveal:nth-child(3),
+.entity-grid > .reveal:nth-child(3),
+.sci-cards > .reveal:nth-child(3),
+.expat-grid > .reveal:nth-child(3),
+.reno-advantage-grid > .reveal:nth-child(3),
+.faq-categories > .reveal:nth-child(3),
+.grid-3 > .reveal:nth-child(3),
+.qlist > .reveal:nth-child(3),
+.steps > .reveal:nth-child(3),
+.mistakes > .reveal:nth-child(3) { transition-delay: 160ms; }
+
+.audience-grid > .reveal:nth-child(4),
+.resources > .reveal:nth-child(4),
+.reno-advantage-grid > .reveal:nth-child(4),
+.faq-categories > .reveal:nth-child(4),
+.qlist > .reveal:nth-child(4),
+.steps > .reveal:nth-child(4),
+.mistakes > .reveal:nth-child(4) { transition-delay: 240ms; }
+
+.audience-grid > .reveal:nth-child(n+5),
+.resources > .reveal:nth-child(n+5),
+.reno-advantage-grid > .reveal:nth-child(n+5),
+.faq-categories > .reveal:nth-child(n+5),
+.qlist > .reveal:nth-child(n+5),
+.steps > .reveal:nth-child(n+5),
+.mistakes > .reveal:nth-child(n+5) { transition-delay: 320ms; }
+
+
+/* ----------------------------------------------------------
+   3. Cartes — survol souris uniquement, jamais au tap.
+   Sur la home, .entity / .audience-card / .chrono-card
+   avaient déjà leur lift : on ne leur ajoute que le liseré
+   doré de la charte.
+   ---------------------------------------------------------- */
+
+/* Home */
+.offer,
+.resource,
+.mini-case,
+.sci-card,
+.expat-card,
+.reno-advantage-card,
+.scope-note,
+/* Satellites */
+.card,
+.step,
+.qitem,
+.mistake {
+  transition: transform .25s cubic-bezier(.22,.61,.36,1),
+              box-shadow .25s ease,
+              border-color .25s ease;
+}
+.audience-card { transition-property: transform, box-shadow, border-color; }
+
+@media (hover: hover) and (pointer: fine) {
+
+  /* --- Home : cartes claires --- */
+  .offer:not(.featured):hover,
+  .mini-case:hover,
+  .reno-advantage-card:hover,
+  .scope-note:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,146,45,.34);
+    box-shadow: 0 26px 60px rgba(15,23,42,.11);
+  }
+  .audience-card:hover { border-color: rgba(201,146,45,.30); }
+
+  /* L'offre mise en avant porte déjà un translateY(-12px)
+     statique : on ne touche pas à son transform, seulement
+     à la lumière et au liseré. */
+  .offer.featured:hover {
+    border-color: rgba(217,170,85,.68);
+    box-shadow: 0 30px 70px rgba(0,0,0,.34);
+  }
+
+  /* --- Home : cartes sur fond bleu nuit --- */
+  .resource:hover,
+  .sci-card:hover,
+  .expat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214,168,76,.42);
+    box-shadow: 0 26px 60px rgba(0,0,0,.28);
+  }
+
+  /* --- Satellites --- */
+  .card:hover,
+  .step:hover,
+  .mistake:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,146,45,.34);
+    box-shadow: 0 26px 60px rgba(15,23,42,.11);
+  }
+  .qitem:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201,146,45,.28);
+    box-shadow: 0 18px 44px rgba(15,23,42,.08);
+  }
+  /* variante sur fond bleu nuit : on garde une ombre sombre */
+  .card.dark:hover {
+    border-color: rgba(214,168,76,.42);
+    box-shadow: 0 26px 60px rgba(0,0,0,.30);
+  }
+}
+
+
+/* ----------------------------------------------------------
+   4. Boutons — le lift existait déjà dans chaque page ;
+   on ajoute le halo doré, l'appui et le focus visible.
+   ---------------------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline-light:hover { box-shadow: 0 14px 34px rgba(214,168,76,.18); }
+  .btn-outline-dark:hover  { box-shadow: 0 14px 32px rgba(15,23,42,.10); }
+  .btn-dark:hover          { box-shadow: 0 16px 38px rgba(7,17,31,.28); }
+}
+.btn:active { transform: translateY(0) scale(.985); }
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(214,168,76,.50), 0 12px 30px rgba(15,23,42,.12);
+}
+
+
+/* ----------------------------------------------------------
+   5. FAQ — dépli plus fluide, <details>/<summary> natif
+   intact. On n'anime que le contenu, jamais la hauteur du
+   conteneur (aucun CLS).
+   ---------------------------------------------------------- */
+@keyframes faqAnswerIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.faq-category details[open] > .faq-answer {
+  animation: faqAnswerIn .26s cubic-bezier(.22,.61,.36,1) both;
+}
+/* Grands thèmes en liste déroulante (home uniquement) */
+.faq-category-dropdown[open] > .faq-category-body {
+  animation: faqAnswerIn .3s cubic-bezier(.22,.61,.36,1) both;
+}
+.faq-category summary { transition: color .2s ease; }
+.faq-category summary::after {
+  transition: background .2s ease, transform .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .faq-category summary:hover { color: var(--gold-600); }
+  .faq-category summary:hover::after {
+    background: rgba(214,168,76,.22);
+    transform: translateY(-50%) scale(1.08);
+  }
+  .faq-category-dropdown > summary.faq-category-summary:hover::after {
+    background: rgba(214,168,76,.24);
+    transform: translateY(-50%) scale(1.06);
+  }
+}
+
+
+/* ----------------------------------------------------------
+   6. Burger → croix
+   Les transitions étaient déjà déclarées sur .mobile-toggle
+   span dans chaque page, mais aucune règle ne les activait.
+   L'état vient de body.menu-open, posé par le JS existant :
+   aucune modification de script nécessaire.
+   ---------------------------------------------------------- */
+body.menu-open .mobile-toggle span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+body.menu-open .mobile-toggle span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+
+/* ----------------------------------------------------------
+   7. Mobile — amplitudes réduites et aucune boucle
+   décorative en tâche de fond. Le globe de la home empilait
+   8 animations infinies (dont background-position, non
+   compositée) : elles sont figées sous 720 px, sans
+   changement de rendu. Le desktop n'est pas touché.
+   ---------------------------------------------------------- */
+@media (max-width: 720px) {
+  /* amplitude réduite ; l'état révélé garde son translateY(0)
+     natif : passer à `none` supprimerait le bloc conteneur et
+     redimensionnerait les images en height:100% (photo fondateur). */
+  .reveal:not(.visible) { transform: translateY(14px); }
+
+  [class*="globe"],
+  .bubble-pulse,
+  .expat-floating-bubble,
+  .hero-relief-mark,
+  .hero-relief-orbit {
+    animation: none !important;
+    will-change: auto;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   8. Préférence système « mouvement réduit »
+   Tout se fige, rien ne disparaît. Ce bloc reste en dernier :
+   il doit l'emporter sur tout ce qui précède.
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
+  }
+  html { scroll-behavior: auto !important; }
+  .reveal { opacity: 1 !important; transform: translateY(0) !important; }
+}
