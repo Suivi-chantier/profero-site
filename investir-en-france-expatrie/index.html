@@ -322,6 +322,10 @@
       letter-spacing: .04em;
     }
 
+    /* la colonne du hero ne doit pas etre etiree par un mot long */
+    .hero-grid > * { min-width: 0; }
+    .hero h1 { overflow-wrap: break-word; }
+
     /* BREADCRUMB */
     .crumb { background: var(--navy-950); padding: 14px 0; border-top: 1px solid rgba(255,255,255,.07); }
     .crumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 9px; color: rgba(255,255,255,.42); font-size: .8rem; }
@@ -575,6 +579,7 @@
       .brand-text strong { font-size: .78rem; }
       .brand-text em { font-size: .62rem; letter-spacing: .20em; }
       .brand-text span { font-size: .54rem; }
+      .hero h1 { font-size: clamp(2rem, 10.4vw, 2.5rem); }
       .hero { padding: 128px 0 70px; }
       .hero-globe { width: 78vw; right: -26vw; top: 58%; opacity: .16; }
       .hero-actions .btn, .cta-actions .btn { width: 100%; }
