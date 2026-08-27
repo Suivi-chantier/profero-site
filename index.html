@@ -3586,6 +3586,22 @@
       .faq-answer {
         padding: 0 16px 16px;
       }
+      /* Même cause que les CTA des offres : .btn est en white-space:nowrap, donc le
+         libellé du bouton imposait à .faq-outro un min-content de 325 px. Comme
+         .faq-shell est une grille dont la piste `auto` se dimensionne sur le
+         min-content de ses items, toute la FAQ s'élargissait à 327 px et débordait
+         sous 327 px de viewport. Le libellé peut désormais passer à la ligne ; il
+         reste sur une seule ligne tant que la place le permet, donc le rendu est
+         inchangé au-dessus de ~330 px. */
+      .faq-outro .btn {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+      }
+      /* Ceinture : les items de la grille FAQ peuvent rétrécir sous leur min-content. */
+      .faq-shell > * {
+        min-width: 0;
+      }
     }
 
 
@@ -3807,6 +3823,21 @@
       }
       .offer-note {
         font-size: .86rem;
+      }
+      /* Les libellés de CTA des offres sont longs et .btn est en white-space:nowrap.
+         La colonne de grille (1fr = minmax(auto, 1fr)) prenait donc la largeur
+         min-content du bouton (~404 px), ce qui élargissait la carte à 470 px et
+         provoquait un scroll horizontal du document sous 470 px de viewport.
+         On autorise le retour à la ligne du libellé sur mobile uniquement. */
+      .offer .btn {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+      }
+      /* Le tableau récapitulatif garde son défilement horizontal interne
+         (.offers-table-wrap { overflow-x: auto }) sans jamais le propager à la page. */
+      .offers-table-wrap {
+        overscroll-behavior-x: contain;
       }
     }
 
@@ -5486,7 +5517,10 @@
 <li>Recherche ou analyse d’un bien selon le profil de risque</li>
 <li>Organisation du financement, des travaux et de la gestion à distance</li>
 </ol>
+<div class="expat-card-actions" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
 <a class="btn btn-primary" href="#contact">Étudier ma stratégie expatrié</a>
+<a class="btn btn-outline-light" href="/investir-en-france-expatrie/">Lire le guide expatrié →</a>
+</div>
 </article>
 </div>
 <div class="expat-warning reveal visible">
