@@ -719,6 +719,34 @@
       .reno-shot { grid-template-columns: 1fr; }
       .reno-shot-side { grid-template-columns: 1fr 1fr; }
     }
+  
+    /* Bloc auteur et sources officielles */
+    .author-section { padding: 72px 0; }
+    .author-card, .sources-card {
+      max-width: 880px; margin: 0 auto; background: var(--white);
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 32px;
+    }
+    .author-card { display: grid; grid-template-columns: 88px 1fr; gap: 26px; align-items: start; }
+    .author-photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center 18%; border: 2px solid var(--gold-500); }
+    .author-body .eyebrow { margin-bottom: 10px; }
+    .author-name { color: var(--navy-950); font-size: 1.05rem; margin-bottom: 8px; }
+    .author-name strong { font-weight: 600; }
+    .author-meta { font-size: .9rem; margin-top: 12px; }
+    .sources-card { margin-top: 20px; }
+    .sources-title { color: var(--navy-950); font-weight: 600; margin-bottom: 6px; }
+    .sources-intro { font-size: .95rem; margin-bottom: 14px; }
+    .sources-list { list-style: none; display: grid; gap: 10px; }
+    .sources-list li { line-height: 1.55; color: var(--muted); font-size: .95rem; padding-left: 18px; position: relative; overflow-wrap: anywhere; }
+    .sources-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-500); }
+    .sources-list a { color: var(--navy-950); text-decoration: underline; text-decoration-color: var(--gold-500); text-underline-offset: 3px; }
+    .sources-list a:hover { color: var(--gold-600); }
+    .sources-list span { font-size: .85rem; }
+    @media (max-width: 720px) {
+      .author-section { padding: 52px 0; }
+      .author-card, .sources-card { padding: 24px 20px; }
+      .author-card { grid-template-columns: 1fr; gap: 16px; }
+      .author-photo { width: 72px; height: 72px; }
+    }
   </style>
 <link rel="stylesheet" href="/assets/css/motion.css"/>
 
@@ -747,10 +775,7 @@
         "name": "Investissement locatif avec travaux et rénovation"
       },
       "publisher": {
-        "@type": "Organization",
-        "@id": "https://www.groupe-profero.com/#organization",
-        "name": "Profero Invest",
-        "url": "https://www.groupe-profero.com/"
+        "@id": "https://www.groupe-profero.com/#organization"
       },
       "breadcrumb": {
         "@id": "https://www.groupe-profero.com/investissement-locatif-avec-travaux/#breadcrumb"
@@ -758,6 +783,90 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.groupe-profero.com/og-image.jpg"
+      },
+      "author": {
+        "@id": "https://www.groupe-profero.com/#matthieu-fumoleau"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.groupe-profero.com/#organization",
+      "name": "Profero Invest",
+      "alternateName": "Groupe Profero",
+      "url": "https://www.groupe-profero.com/",
+      "description": "Profero Invest accompagne les investisseurs, expatriés et non-résidents dans leurs projets immobiliers en France : fiscalité, SCI, financement, travaux et stratégie patrimoniale.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.groupe-profero.com/#logo",
+        "url": "https://www.groupe-profero.com/assets/images/apple-touch-icon.png",
+        "width": 180,
+        "height": 180,
+        "caption": "Profero Invest"
+      },
+      "image": {
+        "@id": "https://www.groupe-profero.com/#logo"
+      },
+      "email": "contact@groupe-profero.com",
+      "telephone": "+33255991417",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 rue Paul Langevin",
+        "postalCode": "49240",
+        "addressLocality": "Avrillé",
+        "addressRegion": "Pays de la Loire",
+        "addressCountry": "FR"
+      },
+      "foundingDate": "2017",
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "SIRET",
+        "value": "991 437 229 00016"
+      },
+      "founder": {
+        "@id": "https://www.groupe-profero.com/#matthieu-fumoleau"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+33255991417",
+        "email": "contact@groupe-profero.com",
+        "areaServed": "FR",
+        "availableLanguage": [
+          "fr"
+        ]
+      },
+      "sameAs": [
+        "https://www.groupe-profero.com/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.groupe-profero.com/#matthieu-fumoleau",
+      "name": "Matthieu Fumoleau",
+      "jobTitle": "Fondateur de Profero Invest",
+      "description": "Fondateur de Profero Invest, entrepreneur et investisseur immobilier",
+      "url": "https://www.groupe-profero.com/",
+      "worksFor": {
+        "@id": "https://www.groupe-profero.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.groupe-profero.com/investissement-locatif-avec-travaux/#service",
+      "name": "Accompagnement à l’investissement locatif avec travaux",
+      "serviceType": "Analyse et pilotage d’investissement locatif avec travaux",
+      "description": "Analyse du potentiel d’un bien à rénover, chiffrage des travaux avant l’offre d’achat, pilotage du chantier avec Profero Rénovation et préparation de la mise en location.",
+      "url": "https://www.groupe-profero.com/investissement-locatif-avec-travaux/",
+      "provider": {
+        "@id": "https://www.groupe-profero.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
       }
     },
     {
@@ -1076,6 +1185,10 @@
 <p>Le piège classique consiste à reproduire ses propres goûts et son propre niveau d’exigence dans un logement destiné à la location. Les prestations doivent correspondre au locataire visé et au standard du secteur : au-dessus, la dépense se récupère mal ; en dessous, le bien se loue moins bien et se dégrade plus vite.</p>
 </div>
 </article>
+</div>
+<div class="caution reveal">
+<strong>Points de vigilance d’un investissement avec travaux</strong>
+<span>Même bien préparée, une opération avec travaux reste exposée à des aléas qu’il faut intégrer dès le départ : dérive du budget travaux, allongement des délais de chantier, vacance locative, évolution des taux d’intérêt, évolution de la fiscalité applicable et liquidité du bien à la revente. Aucun rendement n’est garanti : ces paramètres se provisionnent et se suivent, projet par projet.</span>
 </div>
 </div>
 </section>
@@ -1433,6 +1546,31 @@
 <summary>Comment démarrer un projet locatif avec travaux ?</summary>
 <div class="faq-answer"><p>Par le cadrage, avant la recherche de bien : objectif, capacité d’investissement, budget travaux envisageable, niveau de chantier acceptable et disponibilité réelle. Vient ensuite la vérification de la faisabilité du financement, travaux inclus, puis la recherche sur des critères écrits. Regarder des annonces avant d’avoir fixé ce cadre est l’erreur la plus fréquente : elle conduit à s’attacher à un bien dont le budget de rénovation n’a jamais été vérifié.</p></div>
 </details></div>
+</div>
+</section>
+
+<!-- AUTEUR & SOURCES -->
+<section class="section alt author-section" id="auteur" aria-label="Auteur et sources">
+<div class="container">
+<div class="author-card reveal">
+<img class="author-photo" src="/assets/images/matthieu-fumoleau-portrait.webp" alt="Portrait de Matthieu Fumoleau, fondateur de Profero Invest" width="88" height="88" loading="lazy" decoding="async"/>
+<div class="author-body">
+<div class="eyebrow">L’auteur</div>
+<p class="author-name">Rédigé par <strong>Matthieu Fumoleau</strong>, fondateur de Profero Invest.</p>
+<p>Entrepreneur et investisseur immobilier, Matthieu accompagne les investisseurs dans la structuration de leur stratégie patrimoniale, l’analyse d’opérations immobilières et le pilotage de projets avec travaux en France.</p>
+<p class="author-meta">Dernière mise à jour : <time datetime="2026-08-27">27 août 2026</time> · <a class="ilink" href="/#equipe">Découvrir votre interlocuteur</a></p>
+</div>
+</div>
+<aside class="sources-card reveal" aria-label="Sources officielles utiles">
+<p class="sources-title">Sources officielles utiles</p>
+<p class="sources-intro">Sources officielles utiles pour approfondir le cadre juridique, fiscal ou administratif du sujet. Elles exposent des règles générales et ne remplacent pas l’analyse de votre situation.</p>
+<ul class="sources-list">
+<li><a href="https://www.impots.gouv.fr/particulier/questions/quels-travaux-puis-je-deduire-de-mes-revenus-fonciers" target="_blank" rel="noopener">Quels travaux puis-je déduire de mes revenus fonciers ?</a> <span>— impots.gouv.fr</span></li>
+<li><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F1991" target="_blank" rel="noopener">Revenus locatifs d’une location non meublée</a> <span>— service-public.gouv.fr</span></li>
+<li><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F16096" target="_blank" rel="noopener">Diagnostic de performance énergétique (DPE)</a> <span>— service-public.gouv.fr</span></li>
+<li><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F2042" target="_blank" rel="noopener">Logement à louer décent</a> <span>— service-public.gouv.fr</span></li>
+</ul>
+</aside>
 </div>
 </section>
 

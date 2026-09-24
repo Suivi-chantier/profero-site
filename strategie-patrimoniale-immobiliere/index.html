@@ -690,6 +690,34 @@
       .hero-sub, .hero-kicker, .proof-pill { max-width: 100%; }
       .hero-kicker { white-space: normal; line-height: 1.5; }
     }
+  
+    /* Bloc auteur et sources officielles */
+    .author-section { padding: 72px 0; }
+    .author-card, .sources-card {
+      max-width: 880px; margin: 0 auto; background: var(--white);
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 32px;
+    }
+    .author-card { display: grid; grid-template-columns: 88px 1fr; gap: 26px; align-items: start; }
+    .author-photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center 18%; border: 2px solid var(--gold-500); }
+    .author-body .eyebrow { margin-bottom: 10px; }
+    .author-name { color: var(--navy-950); font-size: 1.05rem; margin-bottom: 8px; }
+    .author-name strong { font-weight: 600; }
+    .author-meta { font-size: .9rem; margin-top: 12px; }
+    .sources-card { margin-top: 20px; }
+    .sources-title { color: var(--navy-950); font-weight: 600; margin-bottom: 6px; }
+    .sources-intro { font-size: .95rem; margin-bottom: 14px; }
+    .sources-list { list-style: none; display: grid; gap: 10px; }
+    .sources-list li { line-height: 1.55; color: var(--muted); font-size: .95rem; padding-left: 18px; position: relative; overflow-wrap: anywhere; }
+    .sources-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-500); }
+    .sources-list a { color: var(--navy-950); text-decoration: underline; text-decoration-color: var(--gold-500); text-underline-offset: 3px; }
+    .sources-list a:hover { color: var(--gold-600); }
+    .sources-list span { font-size: .85rem; }
+    @media (max-width: 720px) {
+      .author-section { padding: 52px 0; }
+      .author-card, .sources-card { padding: 24px 20px; }
+      .author-card { grid-template-columns: 1fr; gap: 16px; }
+      .author-photo { width: 72px; height: 72px; }
+    }
   </style>
 <link rel="stylesheet" href="/assets/css/motion.css"/>
 
@@ -718,10 +746,7 @@
         "name": "Stratégie patrimoniale immobilière"
       },
       "publisher": {
-        "@type": "Organization",
-        "@id": "https://www.groupe-profero.com/#organization",
-        "name": "Profero Invest",
-        "url": "https://www.groupe-profero.com/"
+        "@id": "https://www.groupe-profero.com/#organization"
       },
       "breadcrumb": {
         "@id": "https://www.groupe-profero.com/strategie-patrimoniale-immobiliere/#breadcrumb"
@@ -729,6 +754,90 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.groupe-profero.com/og-image.jpg"
+      },
+      "author": {
+        "@id": "https://www.groupe-profero.com/#matthieu-fumoleau"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.groupe-profero.com/#organization",
+      "name": "Profero Invest",
+      "alternateName": "Groupe Profero",
+      "url": "https://www.groupe-profero.com/",
+      "description": "Profero Invest accompagne les investisseurs, expatriés et non-résidents dans leurs projets immobiliers en France : fiscalité, SCI, financement, travaux et stratégie patrimoniale.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.groupe-profero.com/#logo",
+        "url": "https://www.groupe-profero.com/assets/images/apple-touch-icon.png",
+        "width": 180,
+        "height": 180,
+        "caption": "Profero Invest"
+      },
+      "image": {
+        "@id": "https://www.groupe-profero.com/#logo"
+      },
+      "email": "contact@groupe-profero.com",
+      "telephone": "+33255991417",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 rue Paul Langevin",
+        "postalCode": "49240",
+        "addressLocality": "Avrillé",
+        "addressRegion": "Pays de la Loire",
+        "addressCountry": "FR"
+      },
+      "foundingDate": "2017",
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "SIRET",
+        "value": "991 437 229 00016"
+      },
+      "founder": {
+        "@id": "https://www.groupe-profero.com/#matthieu-fumoleau"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+33255991417",
+        "email": "contact@groupe-profero.com",
+        "areaServed": "FR",
+        "availableLanguage": [
+          "fr"
+        ]
+      },
+      "sameAs": [
+        "https://www.groupe-profero.com/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.groupe-profero.com/#matthieu-fumoleau",
+      "name": "Matthieu Fumoleau",
+      "jobTitle": "Fondateur de Profero Invest",
+      "description": "Fondateur de Profero Invest, entrepreneur et investisseur immobilier",
+      "url": "https://www.groupe-profero.com/",
+      "worksFor": {
+        "@id": "https://www.groupe-profero.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.groupe-profero.com/strategie-patrimoniale-immobiliere/#service",
+      "name": "Accompagnement en stratégie patrimoniale immobilière",
+      "serviceType": "Stratégie patrimoniale immobilière",
+      "description": "Construction d’une stratégie patrimoniale immobilière : lecture de la situation, hiérarchisation des objectifs, arbitrage entre acquérir, conserver, restructurer ou céder, et trajectoire long terme.",
+      "url": "https://www.groupe-profero.com/strategie-patrimoniale-immobiliere/",
+      "provider": {
+        "@id": "https://www.groupe-profero.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
       }
     },
     {
@@ -1386,6 +1495,21 @@
 <summary>Comment démarrer une analyse patrimoniale immobilière ?</summary>
 <div class="faq-answer"><p>Par un échange de cadrage, avant toute recherche de bien. Il permet de préciser votre situation, vos objectifs, votre horizon, votre capacité d’investissement et les contraintes propres à votre profil, puis de dégager les questions à traiter en priorité. Vous en ressortez avec une trajectoire lisible et une liste d’étapes ordonnées, que le premier investissement se fasse dans les mois qui suivent ou plus tard.</p></div>
 </details></div>
+</div>
+</section>
+
+<!-- AUTEUR -->
+<section class="section alt author-section" id="auteur" aria-label="Auteur">
+<div class="container">
+<div class="author-card reveal">
+<img class="author-photo" src="/assets/images/matthieu-fumoleau-portrait.webp" alt="Portrait de Matthieu Fumoleau, fondateur de Profero Invest" width="88" height="88" loading="lazy" decoding="async"/>
+<div class="author-body">
+<div class="eyebrow">L’auteur</div>
+<p class="author-name">Rédigé par <strong>Matthieu Fumoleau</strong>, fondateur de Profero Invest.</p>
+<p>Entrepreneur et investisseur immobilier, Matthieu accompagne les investisseurs dans la structuration de leur stratégie patrimoniale, l’analyse d’opérations immobilières et le pilotage de projets avec travaux en France.</p>
+<p class="author-meta">Dernière mise à jour : <time datetime="2026-08-27">27 août 2026</time> · <a class="ilink" href="/#equipe">Découvrir votre interlocuteur</a></p>
+</div>
+</div>
 </div>
 </section>
 
