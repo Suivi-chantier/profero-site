@@ -4594,10 +4594,20 @@
       .resource-more { padding: 20px; flex-direction: column; align-items: flex-start; }
       .expat-hero-actions .btn { width: 100%; justify-content: center; }
     }
+
+    /* FORMULAIRE — affichage des messages Formspree activés (le style en ligne display:none évite le flash au chargement) */
+    [data-fs-success][data-fs-active],
+    [data-fs-error][data-fs-active] { display: block !important; }
 </style>
 <link rel="stylesheet" href="/assets/css/motion.css"/>
 
 <noscript><style>.reveal{opacity:1!important;transform:translateY(0)!important}</style></noscript>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-Uj6T6aAjNsvEMKtgjJiyR.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
 <nav aria-label="Navigation principale" class="nav">
@@ -4615,7 +4625,7 @@
 <li><a href="#faq">FAQ</a></li>
 </ul>
 <div class="nav-action">
-<a class="btn btn-primary" href="#contact">Étudier mon projet</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=etudier-mon-projet plausible-event-zone=header" href="#contact">Étudier mon projet</a>
 <button aria-expanded="false" aria-label="Ouvrir le menu" class="mobile-toggle" type="button">
 <span></span><span></span>
 </button>
@@ -4629,7 +4639,7 @@
 <a href="#projets">Investir en France</a>
 <a href="#simulateur">Simulateur</a>
 <a href="#faq">FAQ</a>
-<a href="#contact">Étudier mon projet</a>
+<a class="plausible-event-name=Clic+CTA plausible-event-cta=etudier-mon-projet plausible-event-zone=menu-mobile" href="#contact">Étudier mon projet</a>
 </div>
 <header class="hero" id="accueil">
 <div aria-hidden="true" class="hero-relief-mark"></div>
@@ -4643,8 +4653,8 @@
           Nous analysons votre situation, votre fiscalité, votre capacité bancaire et votre stratégie immobilière avant toute acquisition.
         </p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#contact">Faire analyser ma situation</a>
-<a class="btn btn-outline-light" href="#simulateur">Estimer ma capacité d’investissement</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=faire-analyser-ma-situation plausible-event-zone=hero" href="#contact">Faire analyser ma situation</a>
+<a class="btn btn-outline-light plausible-event-name=Clic+CTA plausible-event-cta=estimer-ma-capacite-d-investissement plausible-event-zone=hero" href="#simulateur">Estimer ma capacité d’investissement</a>
 </div>
 <div aria-label="Points forts" class="hero-proof">
 <div class="proof-pill"><b>Depuis 2017</b> en investissement immobilier</div>
@@ -4800,7 +4810,7 @@
 <h3>Fiscalité analysée avant d’investir</h3>
 </div>
 </div>
-<a href="/fiscalite-investissement-locatif/" style="display:inline-block;margin:0 0 14px;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Comprendre la fiscalité de l’investissement locatif →</a>
+<a class="plausible-event-name=Clic+Guide plausible-event-cible=fiscalite plausible-event-zone=groupe" href="/fiscalite-investissement-locatif/" style="display:inline-block;margin:0 0 14px;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Comprendre la fiscalité de l’investissement locatif →</a>
 <p>
               La fiscalité ne doit pas être subie, ni devenir le seul moteur de décision. Nous l’étudions
               avant l’acquisition, en fonction de votre profil et de vos objectifs.
@@ -4883,7 +4893,7 @@
 <div class="chrono-card">
 <span class="chrono-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.4v15M6.6 19.4h10.8M4 8.2h16"></path><path d="m7.4 8.2-2.8 5.2h5.6L7.4 8.2Z"></path><path d="m16.6 8.2-2.8 5.2h5.6l-2.8-5.2Z"></path></svg></span>
 <h3>Fiscalité</h3>
-<a href="/fiscalite-investissement-locatif/" style="display:inline-block;margin:0 0 10px;font-size:.78rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Fiscalité de l’investissement locatif →</a>
+<a class="plausible-event-name=Clic+Guide plausible-event-cible=fiscalite plausible-event-zone=methode" href="/fiscalite-investissement-locatif/" style="display:inline-block;margin:0 0 10px;font-size:.78rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Fiscalité de l’investissement locatif →</a>
 <p>Régimes et structures comparés selon votre profil : on anticipe les conséquences avant de décider, pas après.</p>
 </div>
 </article>
@@ -4949,25 +4959,25 @@
 <div class="audience-icon">01</div>
 <h3>Particulier investisseur</h3>
 <p>Vous souhaitez investir avec une vision claire du rendement, de la fiscalité, du financement et des risques.</p>
-<a class="audience-link" href="/conseil-investissement-immobilier/">Être accompagné sur votre projet →</a>
+<a class="audience-link plausible-event-name=Clic+Guide plausible-event-cible=conseil plausible-event-zone=profils" href="/conseil-investissement-immobilier/">Être accompagné sur votre projet →</a>
 </article>
 <article class="audience-card reveal visible">
 <div class="audience-icon">02</div>
 <h3>Patrimoine existant</h3>
 <p>Vous possédez déjà des biens et souhaitez les arbitrer, les restructurer ou préparer leur transmission.</p>
-<a class="audience-link" href="/strategie-patrimoniale-immobiliere/">Structurer et arbitrer votre patrimoine →</a>
+<a class="audience-link plausible-event-name=Clic+Guide plausible-event-cible=strategie plausible-event-zone=profils" href="/strategie-patrimoniale-immobiliere/">Structurer et arbitrer votre patrimoine →</a>
 </article>
 <article class="audience-card reveal visible">
 <div class="audience-icon">03</div>
 <h3>Expatrié / non-résident</h3>
 <p>Vous souhaitez investir ou conserver des actifs en France avec une lecture claire de la fiscalité, de la succession et de la gestion à distance.</p>
-<a class="audience-link" href="/investir-en-france-expatrie/">Investir en France depuis l’étranger →</a>
+<a class="audience-link plausible-event-name=Clic+Guide plausible-event-cible=expatrie plausible-event-zone=profils" href="/investir-en-france-expatrie/">Investir en France depuis l’étranger →</a>
 </article>
 <article class="audience-card reveal visible">
 <div class="audience-icon">04</div>
 <h3>Chef d’entreprise</h3>
 <p>Vous souhaitez transformer vos revenus ou votre trésorerie en patrimoine immobilier structuré.</p>
-<a class="audience-link" href="/strategie-patrimoniale-immobiliere/">Structurer votre patrimoine d’entrepreneur →</a>
+<a class="audience-link plausible-event-name=Clic+Guide plausible-event-cible=strategie plausible-event-zone=profils" href="/strategie-patrimoniale-immobiliere/">Structurer votre patrimoine d’entrepreneur →</a>
 </article>
 </div>
 </div>
@@ -4979,7 +4989,7 @@
 <div class="eyebrow">Nos offres</div>
 <h2>Trois offres pour structurer, investir et exécuter avec méthode</h2>
 </div>
-<a class="btn btn-outline-dark" href="#contact">Demander une étude</a>
+<a class="btn btn-outline-dark plausible-event-name=Clic+CTA plausible-event-cta=demander-une-etude plausible-event-zone=offres" href="#contact">Demander une étude</a>
 </div>
 <div class="offers-grid offers-grid-three offers-updated">
 <article class="offer reveal">
@@ -5005,7 +5015,7 @@
 <strong>Ce que ça n’est pas :</strong>
 <span>un accompagnement à l’achat. C’est un diagnostic, pas une exécution.</span>
 </div>
-<a class="btn btn-outline-dark" href="#contact">Commander mon bilan patrimonial</a>
+<a class="btn btn-outline-dark plausible-event-name=Clic+CTA plausible-event-cta=commander-mon-bilan-patrimonial plausible-event-zone=offres" href="#contact">Commander mon bilan patrimonial</a>
 </article>
 <article class="offer reveal">
 <div class="offer-label">Offre 2 — Projet investisseur</div>
@@ -5030,7 +5040,7 @@
 <strong>Non inclus :</strong>
 <span>le bilan patrimonial, disponible en option à 650 € HT, et les travaux réalisés par Profero Rénovation sur devis séparé.</span>
 </div>
-<a class="btn btn-outline-dark" href="#contact">Être accompagné sur mon investissement</a>
+<a class="btn btn-outline-dark plausible-event-name=Clic+CTA plausible-event-cta=etre-accompagne-sur-mon-investissement plausible-event-zone=offres" href="#contact">Être accompagné sur mon investissement</a>
 </article>
 <article class="offer featured reveal">
 <div class="offer-label">Offre 3 — Accompagnement global</div>
@@ -5055,7 +5065,7 @@
 <strong>Positionnement :</strong>
 <span>une offre globale pensée pour les investisseurs qui veulent une lecture patrimoniale, fiscale et opérationnelle complète.</span>
 </div>
-<a class="btn btn-primary" href="#contact">Construire ma stratégie globale</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=construire-ma-strategie-globale plausible-event-zone=offres" href="#contact">Construire ma stratégie globale</a>
 </article>
 </div>
 <div class="offers-recap reveal">
@@ -5138,7 +5148,7 @@
 <p>Le bilan patrimonial à 650 € HT clarifie la situation et transforme une intention vague en stratégie exploitable.</p>
 </article>
 </div>
-<a href="/conseil-investissement-immobilier/" style="display:inline-block;margin:16px 0 0;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Découvrir l’accompagnement Profero Invest →</a>
+<a class="plausible-event-name=Clic+Guide plausible-event-cible=conseil plausible-event-zone=offres" href="/conseil-investissement-immobilier/" style="display:inline-block;margin:16px 0 0;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Découvrir l’accompagnement Profero Invest →</a>
 </div>
 <p class="pricing-note reveal">Tarifs indicatifs présentés HT. Les travaux, frais d’acquisition, frais bancaires, frais juridiques, frais comptables et honoraires de partenaires externes font l’objet de devis ou contrats séparés lorsque nécessaire.</p>
 </div>
@@ -5167,7 +5177,7 @@
 <strong class="choose-answer">Stratégie globale</strong>
 </article>
 </div>
-<a class="btn btn-primary" href="#contact">M’aider à choisir</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=m-aider-a-choisir plausible-event-zone=choix-offre" href="#contact">M’aider à choisir</a>
 </div>
 </div>
 </section>
@@ -5290,7 +5300,7 @@
 <h3>Votre capacité estimée est une base de départ</h3>
 <p>Pour savoir quel type de bien viser, quelle fiscalité choisir et quel montage bancaire privilégier, faites analyser votre situation par Profero Invest.</p>
 </div>
-<a class="btn btn-gold" href="#contact">Faire analyser ma capacité</a>
+<a class="btn btn-gold plausible-event-name=Clic+CTA plausible-event-cta=faire-analyser-ma-capacite plausible-event-zone=simulateur" href="#contact">Faire analyser ma capacité</a>
 </div>
 </div>
 </section>
@@ -5436,7 +5446,7 @@
 </div>
 </div>
 <div class="reno-gallery-caption"><strong>Illustrations de terrain :</strong> nos propres chantiers, menés par les équipes Profero Rénovation.</div>
-<a href="/investissement-locatif-avec-travaux/" style="display:block;max-width:520px;margin:12px 0 0 auto;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Lire le guide investissement avec travaux →</a>
+<a class="plausible-event-name=Clic+Guide plausible-event-cible=travaux plausible-event-zone=projets" href="/investissement-locatif-avec-travaux/" style="display:block;max-width:520px;margin:12px 0 0 auto;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#b8872c;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(184,135,44,.42);">Lire le guide investissement avec travaux →</a>
 </div>
 </div>
 </article>
@@ -5458,32 +5468,32 @@
 <span>Guide fiscal</span>
 <h3>SCI IR ou IS : comment choisir ?</h3>
 <p>Comprendre les conséquences fiscales, patrimoniales et successorales du choix de structure avant d’investir.</p>
-<a class="resource-link" href="/fiscalite-investissement-locatif/">Comparer les régimes d’imposition →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=fiscalite plausible-event-zone=ressources" href="/fiscalite-investissement-locatif/">Comparer les régimes d’imposition →</a>
 </article>
 <article class="resource reveal visible">
 <span>Étude patrimoniale immobilière</span>
 <h3>Arbitrer, conserver ou transmettre</h3>
 <p>Une méthode pour comparer les scénarios et décider en cohérence avec votre horizon.</p>
-<a class="resource-link" href="/strategie-patrimoniale-immobiliere/">Lire le guide stratégie patrimoniale →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=strategie plausible-event-zone=ressources" href="/strategie-patrimoniale-immobiliere/">Lire le guide stratégie patrimoniale →</a>
 </article>
 <article class="resource reveal visible">
 <span>Vision 360°</span>
 <h3>Investir en France depuis l’étranger</h3>
 <p>Les points à anticiper : fiscalité des non-résidents, financement, gestion à distance, succession et cadre juridique.</p>
-<a class="resource-link" href="/investir-en-france-expatrie/">Découvrir le guide des expatriés →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=expatrie plausible-event-zone=ressources" href="/investir-en-france-expatrie/">Découvrir le guide des expatriés →</a>
 </article>
 <article class="resource reveal visible">
 <span>Guide expatriés</span>
 <h3>Investir via une société depuis l’étranger</h3>
 <p>Nom propre, SCI ou autre société : la bonne structure dépend de votre situation familiale, fiscale, bancaire et patrimoniale.</p>
-<a class="resource-link" href="/sci-depuis-etranger/">Comparer nom propre, SCI et société →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=sci plausible-event-zone=ressources" href="/sci-depuis-etranger/">Comparer nom propre, SCI et société →</a>
 </article>
 </div>
 <nav class="resource-more reveal visible" aria-label="Autres guides Profero Invest">
 <span>Autres guides</span>
-<a class="resource-link" href="/investissement-locatif-expatrie/">Investissement locatif à distance →</a>
-<a class="resource-link" href="/investissement-locatif-avec-travaux/">Acheter, rénover et louer →</a>
-<a class="resource-link" href="/conseil-investissement-immobilier/">Notre accompagnement pas à pas →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=locatif-expatrie plausible-event-zone=ressources" href="/investissement-locatif-expatrie/">Investissement locatif à distance →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=travaux plausible-event-zone=ressources" href="/investissement-locatif-avec-travaux/">Acheter, rénover et louer →</a>
+<a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=conseil plausible-event-zone=ressources" href="/conseil-investissement-immobilier/">Notre accompagnement pas à pas →</a>
 </nav>
 </div>
 </section>
@@ -5515,8 +5525,8 @@
 <div><strong>04</strong><span>Gestion à distance sécurisée</span></div>
 </div>
 <div class="expat-card-actions expat-hero-actions">
-<a class="btn btn-primary" href="#contact">Étudier ma stratégie expatrié</a>
-<a class="btn btn-outline-light" href="/investir-en-france-expatrie/">Lire le guide expatrié →</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=etudier-ma-strategie-expatrie plausible-event-zone=expatries" href="#contact">Étudier ma stratégie expatrié</a>
+<a class="btn btn-outline-light plausible-event-name=Clic+Guide plausible-event-cible=expatrie plausible-event-zone=expatries" href="/investir-en-france-expatrie/">Lire le guide expatrié →</a>
 </div>
 </div>
 </div>
@@ -5525,7 +5535,7 @@
 <span>
           pour un expatrié, le bon investissement n’est pas seulement celui qui affiche le meilleur rendement.
           C’est celui qui reste cohérent avec votre fiscalité, votre pays de résidence, votre famille, votre horizon de retour éventuel et votre stratégie de transmission.
-          <br/><a class="resource-link" href="/investissement-locatif-expatrie/">Monter un projet locatif depuis l’étranger →</a>
+          <br/><a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=locatif-expatrie plausible-event-zone=expatries" href="/investissement-locatif-expatrie/">Monter un projet locatif depuis l’étranger →</a>
         </span>
 </div>
 </div>
@@ -5575,7 +5585,7 @@
 <span>
           la structure ne doit pas être choisie uniquement pour “payer moins d’impôt”. Le bon choix se démontre
           en comparant les scénarios sur votre projet réel : c’est l’objet d’une analyse personnalisée Profero Invest.
-          <br/><a class="resource-link" href="/sci-depuis-etranger/">Lire le guide société depuis l’étranger →</a>
+          <br/><a class="resource-link plausible-event-name=Clic+Guide plausible-event-cible=sci plausible-event-zone=sci" href="/sci-depuis-etranger/">Lire le guide société depuis l’étranger →</a>
         </span>
 </div>
 </div>
@@ -5862,7 +5872,7 @@
 <strong>Vous ne trouvez pas votre réponse ?</strong>
 <span>Chaque situation patrimoniale immobilière est différente. Si vous souhaitez aller plus loin, nous pouvons étudier votre profil, votre capacité et vos objectifs lors d’un premier échange.</span>
 </div>
-<a class="btn btn-primary" href="#contact">Nous poser votre question</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=nous-poser-votre-question plausible-event-zone=faq" href="#contact">Nous poser votre question</a>
 </div>
 </div>
 </section>
@@ -5872,7 +5882,7 @@
 <div>
 <strong>Vous voulez savoir quelle stratégie correspond à votre situation ?</strong>
 </div>
-<a class="btn btn-primary" href="#contact">Faire analyser ma situation</a>
+<a class="btn btn-primary plausible-event-name=Clic+CTA plausible-event-cta=faire-analyser-ma-situation plausible-event-zone=bandeau-cta" href="#contact">Faire analyser ma situation</a>
 </div>
 </div>
 </section>
@@ -5890,14 +5900,14 @@
 <div class="contact-detail-icon">☎</div>
 <div>
 <strong>Téléphone</strong>
-<a href="tel:+33255991417">02 55 99 14 17</a>
+<a class="plausible-event-name=Clic+Telephone plausible-event-zone=contact" href="tel:+33255991417">02 55 99 14 17</a>
 </div>
 </div>
 <div class="contact-detail">
 <div class="contact-detail-icon">@</div>
 <div>
 <strong>Email</strong>
-<a href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a>
+<a class="plausible-event-name=Clic+Email plausible-event-zone=contact" href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a>
 </div>
 </div>
 <div class="contact-detail">
@@ -5991,7 +6001,34 @@
 </form>
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#leadForm', formId: 'mzdoovwr' });
+  formspree('initForm', {
+    formElement: '#leadForm',
+    formId: 'mzdoovwr',
+    onSuccess: function (context) {
+      // Mesure d'audience : seule la catégorie de profil est transmise, jamais de donnée nominative
+      try {
+        var profils = {
+          'Particulier investisseur': 'particulier-investisseur',
+          'Patrimoine existant': 'patrimoine-existant',
+          'Expatrié / non-résident souhaitant investir en France': 'expatrie-non-resident',
+          'Chef d’entreprise / indépendant': 'chef-entreprise-independant',
+          'Propriétaire avec un bien à rénover': 'bien-a-renover',
+          'Autre': 'autre'
+        };
+        var champ = context.form.querySelector('[name="profil"]');
+        var profil = (champ && profils[champ.value]) || 'non-renseigne';
+        if (window.plausible) plausible('Formulaire envoye', { props: { profil: profil } });
+      } catch (e) {}
+      // Comportement par défaut de Formspree conservé : réinitialisation du formulaire après succès
+      context.form.reset();
+    },
+    onError: function (context) {
+      // Erreur limitée à un champ : Formspree n'active que les messages de champ, absents ici,
+      // on affiche donc le message d'erreur général (masqué de nouveau à la soumission suivante)
+      var zone = context.form.parentElement && context.form.parentElement.querySelector('[data-fs-error=""]');
+      if (zone) zone.setAttribute('data-fs-active', '');
+    }
+  });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </div>
@@ -6028,8 +6065,8 @@
 <div>
 <h4>Contact</h4>
 <ul>
-<li><a href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a></li>
-<li><a href="tel:+33255991417">02 55 99 14 17</a></li>
+<li><a class="plausible-event-name=Clic+Email plausible-event-zone=footer" href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a></li>
+<li><a class="plausible-event-name=Clic+Telephone plausible-event-zone=footer" href="tel:+33255991417">02 55 99 14 17</a></li>
 <li><a href="#contact">Secteur France · Siège à Avrillé, près d’Angers</a></li>
 </ul>
 </div>

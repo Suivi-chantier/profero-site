@@ -167,7 +167,21 @@
     section { padding: 22px 20px; border-radius: 18px; }
     main { padding: 32px 0 50px; }
   }
+
+  .optout-link {
+    background: none; border: 0; padding: 0; font: inherit; cursor: pointer;
+    color: var(--gold-600); text-decoration: underline; text-underline-offset: 2px; text-align: left;
+  }
+  .optout-link:hover { color: var(--navy-950); }
+  .optout-status { font-size: .92rem; padding: 10px 14px; border-radius: 12px; background: var(--cream); border: 1px solid var(--line); }
+  .optout-status strong { color: var(--navy-950); }
 </style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-Uj6T6aAjNsvEMKtgjJiyR.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
 
@@ -176,7 +190,7 @@
     <a class="back" href="index.html">← Retour au site</a>
     <span class="brand-line">Profero Invest</span>
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 26 août 2026</p>
+    <p class="updated">Dernière mise à jour : 24 septembre 2026</p>
   </div>
 </div>
 
@@ -189,8 +203,8 @@
       <li>12 rue Paul Langevin, 49240 Avrillé, France</li>
       <li>SIRET : 991 437 229 00016</li>
       <li>Représentant : Matthieu Fumoleau, fondateur</li>
-      <li>Email : <a href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a></li>
-      <li>Téléphone : <a href="tel:+33255991417">02 55 99 14 17</a></li>
+      <li>Email : <a class="plausible-event-name=Clic+Email plausible-event-zone=contenu" href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a></li>
+      <li>Téléphone : <a class="plausible-event-name=Clic+Telephone plausible-event-zone=contenu" href="tel:+33255991417">02 55 99 14 17</a></li>
     </ul>
     <p class="muted">Cette politique explique quelles données personnelles sont collectées via le site,
       pourquoi, combien de temps elles sont conservées et comment exercer vos droits.</p>
@@ -270,6 +284,11 @@
       formulaire depuis le réseau de diffusion unpkg.com. Ces appels transmettent techniquement
       votre adresse IP et les informations de votre navigateur à ces fournisseurs. Aucun cookie
       publicitaire ni identifiant de suivi n’est déposé à cette occasion.</p>
+
+    <p><strong>Mesure d’audience</strong> — Plausible Insights OÜ (Estonie, Union européenne) traite, pour
+      notre compte, les données techniques de navigation nécessaires à la production de statistiques anonymes
+      et agrégées. Ces données ne sont ni revendues, ni utilisées à d’autres fins, ni recoupées avec d’autres
+      traitements.</p>
   </section>
 
   <section>
@@ -300,7 +319,7 @@
     </ul>
     <div class="callout">
       <strong>Exercer vos droits</strong>
-      Écrivez à <a href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a> ou à
+      Écrivez à <a class="plausible-event-name=Clic+Email plausible-event-zone=contenu" href="mailto:contact@groupe-profero.com">contact@groupe-profero.com</a> ou à
       Profero Invest, 12 rue Paul Langevin, 49240 Avrillé. Une réponse vous est apportée dans un délai
       d’un mois. Une pièce justificative d’identité peut être demandée en cas de doute raisonnable sur
       l’identité du demandeur.
@@ -317,9 +336,19 @@
 
   <section>
     <h2>Cookies</h2>
-    <p>Le site ne dépose aucun cookie de mesure d’audience, de publicité ou de suivi comportemental,
-      et n’utilise aucun outil d’analyse statistique. Aucun consentement préalable n’est donc requis à
-      ce titre.</p>
+    <p>Le site ne dépose aucun cookie de mesure d’audience, de publicité ou de suivi comportemental.</p>
+    <p>Pour comprendre comment le site est consulté, nous utilisons Plausible Analytics, un outil de mesure
+      d’audience sans cookie, hébergé dans l’Union européenne. Il produit uniquement des statistiques agrégées :
+      pages consultées, site de provenance, type d’appareil et de navigateur, pays, ainsi que les clics sur les
+      boutons de contact et l’envoi du formulaire.</p>
+    <p>Plausible ne dépose pas de cookie de mesure d’audience et ne permet pas d’identifier individuellement les
+      visiteurs. Les données sont utilisées uniquement pour comprendre l’utilisation du site et améliorer son
+      contenu.</p>
+    <p>Vous pouvez choisir de ne pas être comptabilisé dans ces statistiques :
+      <button type="button" class="optout-link" id="plausibleOptOut">Ne plus être comptabilisé dans les statistiques</button><button type="button" class="optout-link" id="plausibleOptIn" hidden>Être de nouveau comptabilisé dans les statistiques</button>.</p>
+    <p class="optout-status" id="plausibleStatus" aria-live="polite">Statut : ce réglage nécessite que JavaScript soit activé dans votre navigateur.</p>
+    <p>Un clic sur ce lien enregistre votre choix dans votre navigateur afin d’empêcher votre comptabilisation
+      dans les statistiques. Un second lien permet de revenir en arrière.</p>
   </section>
 
   <section>
@@ -342,5 +371,38 @@
   <a href="mentions-legales.html">Mentions légales</a>
 </footer>
 
+<script>
+  // Désactivation de la mesure d'audience Plausible (préférence stockée dans ce navigateur uniquement)
+  (function () {
+    var statut = document.getElementById('plausibleStatus');
+    var off = document.getElementById('plausibleOptOut');
+    var on = document.getElementById('plausibleOptIn');
+    if (!statut || !off || !on) return;
+    function ignore() {
+      try { return window.localStorage.getItem('plausible_ignore') === 'true'; } catch (e) { return null; }
+    }
+    function afficher() {
+      var etat = ignore();
+      if (etat === null) {
+        statut.textContent = 'Statut : votre navigateur ne permet pas d’enregistrer ce choix (stockage local indisponible).';
+        off.hidden = true; on.hidden = true;
+        return;
+      }
+      statut.innerHTML = etat
+        ? 'Statut actuel : <strong>non comptabilisé</strong> dans les statistiques de ce navigateur.'
+        : 'Statut actuel : <strong>comptabilisé</strong> dans les statistiques (de façon anonyme et agrégée).';
+      off.hidden = etat; on.hidden = !etat;
+    }
+    off.addEventListener('click', function () {
+      try { window.localStorage.setItem('plausible_ignore', 'true'); } catch (e) {}
+      afficher();
+    });
+    on.addEventListener('click', function () {
+      try { window.localStorage.removeItem('plausible_ignore'); } catch (e) {}
+      afficher();
+    });
+    afficher();
+  })();
+</script>
 </body>
 </html>
